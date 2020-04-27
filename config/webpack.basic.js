@@ -49,9 +49,7 @@ module.exports = webpackMerge(
       }),
     ],
     devServer: {
-      contentBase: paths.output,
       historyApiFallback: true,
-      host: '0.0.0.0',
     },
     resolve: {
       extensions: ['.js'],
