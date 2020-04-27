@@ -8,6 +8,7 @@ module.exports = {
   src: resolveApp('src/'),
   entry: resolveApp('src/index.js'),
   template: resolveApp('src/index.html'),
+  favicon: resolveApp('src/favicon.ico'),
   output: resolveApp('output/'),
   build: resolveApp('build/'),
   nodeModules: resolveApp('node_modules/'),

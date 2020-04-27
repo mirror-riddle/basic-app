@@ -23,9 +23,28 @@ module.exports = webpackMerge(
         },
       },
     },
+    module: {
+      rules: [
+        {
+          oneOf: [
+            {
+              test: /\.css$/,
+              include: paths.src,
+              use: ['style-loader', 'css-loader'],
+            },
+            {
+              test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
+              include: paths.src,
+              use: ['file-loader'],
+            },
+          ],
+        },
+      ],
+    },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
+        favicon: paths.favicon,
         template: paths.template,
       }),
     ],
