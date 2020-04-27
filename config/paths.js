@@ -12,4 +12,5 @@ module.exports = {
   output: resolveApp('output/'),
   build: resolveApp('build/'),
   nodeModules: resolveApp('node_modules/'),
+  dotEnv: resolveApp('.env'),
 };
