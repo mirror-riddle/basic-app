@@ -32,7 +32,7 @@ module.exports = webpackMerge(
         {
           oneOf: [
             {
-              include: [paths.src, paths.config],
+              include: [paths.src],
               test: /\.js$/,
               use: [
                 {
