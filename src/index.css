@@ -1,7 +1,42 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   margin: 0;
 }
 
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #006fbb;
+}
+
 .basic-app {
   text-align: center;
+}
+
+.basic-app-title {
+  color: white;
+}
+
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.basic-app-favicon {
+  width: 70%;
+  animation-name: rotate-circle;
+  animation-duration: 2000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
