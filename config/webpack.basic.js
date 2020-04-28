@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { EnvironmentPlugin } = require('webpack');
 const DotenvPlugin = require('dotenv-webpack');
 const webpackMerge = require('webpack-merge');
 const paths = require('./paths');
@@ -60,6 +61,7 @@ module.exports = webpackMerge(
         favicon: paths.favicon,
         template: paths.template,
       }),
+      new EnvironmentPlugin({ 'process.env.NODE_ENV': null }),
       new DotenvPlugin({ path: paths.dotEnv }),
     ],
     resolve: {
