@@ -29,26 +29,28 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
-          test: /\.js$/,
-          exclude: /[\\/]node_modules[\\/]/,
-          use: [
+          oneOf: [
             {
-              loader: 'eslint-loader',
-              options: {
-                cache: true,
-              },
+              include: [paths.src, paths.config],
+              test: /\.js$/,
+              use: [
+                {
+                  loader: 'eslint-loader',
+                  options: { cache: true },
+                },
+              ],
+            },
+            {
+              include: paths.src,
+              test: /\.css$/,
+              use: ['style-loader', 'css-loader'],
+            },
+            {
+              include: paths.src,
+              test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
+              use: ['file-loader'],
             },
           ],
-        },
-        {
-          test: /\.css$/,
-          include: paths.src,
-          use: ['style-loader', 'css-loader'],
-        },
-        {
-          test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
-          include: paths.src,
-          use: ['file-loader'],
         },
       ],
     },
