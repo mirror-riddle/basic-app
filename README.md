@@ -4,7 +4,7 @@ basic app with support of webpack and linter
 
 ## webpack
 
-`CSS`, `JavaScript`, `Image Files`, `dotenv`
+`CSS`, `JavaScript`, `Image Files`, `dotenv`, `babel`
 
 ## linter
 
