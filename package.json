@@ -11,10 +11,58 @@
     "build": "webpack --config config/webpack.prod.js",
     "webpack": "webpack --config config/webpack.dev.js"
   },
+  "browserslist": [
+    "defaults"
+  ],
+  "babel": {
+    "presets": [
+      "minify",
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "jsxBracketSameLine": true,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "endOfLine": "lf",
+    "overrides": []
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "standard",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "ignorePatterns": [
+      "build/",
+      "output/",
+      "node_modules/"
+    ],
+    "rules": {
+      "semi": "off",
+      "comma-dangle": "off"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
+    "babel-preset-minify": "^0.5.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "dotenv-webpack": "^1.7.0",
