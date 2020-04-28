@@ -28,6 +28,18 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
+          test: /\.js$/,
+          exclude: /[\\/]node_modules[\\/]/,
+          use: [
+            {
+              loader: 'eslint-loader',
+              options: {
+                cache: true,
+              },
+            },
+          ],
+        },
+        {
           test: /\.css$/,
           include: paths.src,
           use: ['style-loader', 'css-loader'],

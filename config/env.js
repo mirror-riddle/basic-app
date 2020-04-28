@@ -13,3 +13,5 @@ const getAppEnvironment = () => {
   const appEntries = entries.filter(([key, value]) => BASIC_APP.test(key));
   return Object.fromEntries(appEntries);
 };
+
+module.exports = getAppEnvironment;
