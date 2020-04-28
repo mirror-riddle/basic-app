@@ -8,7 +8,9 @@ module.exports = webpackMerge(
   {
     mode: 'none',
     entry: paths.entry,
-    output: {},
+    output: {
+      filename: '[name].[contenthash].js',
+    },
     optimization: {
       moduleIds: 'hashed',
       runtimeChunk: 'single',
@@ -26,18 +28,14 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
-          oneOf: [
-            {
-              test: /\.css$/,
-              include: paths.src,
-              use: ['style-loader', 'css-loader'],
-            },
-            {
-              test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
-              include: paths.src,
-              use: ['file-loader'],
-            },
-          ],
+          test: /\.css$/,
+          include: paths.src,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
+          include: paths.src,
+          use: ['file-loader'],
         },
       ],
     },
@@ -48,9 +46,6 @@ module.exports = webpackMerge(
         template: paths.template,
       }),
     ],
-    devServer: {
-      historyApiFallback: true,
-    },
     resolve: {
       extensions: ['.js'],
       modules: [paths.src, paths.nodeModules],

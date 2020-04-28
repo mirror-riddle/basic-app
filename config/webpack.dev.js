@@ -6,6 +6,8 @@ module.exports = webpackMerge(basicConfig, {
   mode: 'development',
   output: {
     path: paths.output,
-    filename: '[name].js',
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 });

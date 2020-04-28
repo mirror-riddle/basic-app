@@ -6,6 +6,5 @@ module.exports = webpackMerge(basicConfig, {
   mode: 'production',
   output: {
     path: paths.build,
-    filename: '[contenthash].min.js',
   },
 });
