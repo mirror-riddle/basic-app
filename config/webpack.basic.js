@@ -36,6 +36,9 @@ module.exports = webpackMerge(
               test: /\.js$/,
               use: [
                 {
+                  loader: 'babel-loader',
+                },
+                {
                   loader: 'eslint-loader',
                   options: { cache: true },
                 },
