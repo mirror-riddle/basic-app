@@ -30,27 +30,17 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
+          include: [paths.src],
           oneOf: [
             {
-              include: [paths.src],
               test: /\.js$/,
-              use: [
-                {
-                  loader: 'babel-loader',
-                },
-                {
-                  loader: 'eslint-loader',
-                  options: { cache: true },
-                },
-              ],
+              use: ['babel-loader', 'eslint-loader'],
             },
             {
-              include: paths.src,
               test: /\.css$/,
               use: ['style-loader', 'css-loader'],
             },
             {
-              include: paths.src,
               test: /\.(ico|png|svg|jpg|jpeg|gif)$/,
               use: ['file-loader'],
             },
