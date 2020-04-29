@@ -30,7 +30,7 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
-          include: paths.src,
+          include: [paths.src],
           oneOf: [
             {
               test: /\.js$/,
