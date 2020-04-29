@@ -14,6 +14,7 @@
       "scripthost"
     ],
     "strict": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
