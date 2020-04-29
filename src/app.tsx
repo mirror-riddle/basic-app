@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, AnimationEventHandler } from 'react';
 
-export const App = () => {
+export const App: React.FunctionComponent = () => {
   const [count, setCount] = useState(0);
 
-  const onAnimationIteration = (event) => {
+  const onAnimationIteration: AnimationEventHandler = () => {
     setCount(count + 1);
   };
 

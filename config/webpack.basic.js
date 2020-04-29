@@ -19,7 +19,7 @@ module.exports = webpackMerge(
       splitChunks: {
         cacheGroups: {
           verdors: {
-            test: /[\\/]node_modules[\\/]/, // match both / and \
+            test: /[\\/]node_modules[\\/]/,
             name: 'verdors',
             chunks: 'all',
             priority: 0,
@@ -30,10 +30,14 @@ module.exports = webpackMerge(
     module: {
       rules: [
         {
-          include: [paths.src],
+          include: paths.src,
           oneOf: [
             {
-              test: /\.js$/,
+              test: /\.(ts|tsx)$/,
+              use: ['babel-loader', 'ts-loader', 'eslint-loader'],
+            },
+            {
+              test: /\.(js|jsx)$/,
               use: ['babel-loader', 'eslint-loader'],
             },
             {
@@ -58,7 +62,7 @@ module.exports = webpackMerge(
       new DotenvPlugin({ path: paths.dotEnv }),
     ],
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       modules: [paths.src, paths.nodeModules],
     },
   }
