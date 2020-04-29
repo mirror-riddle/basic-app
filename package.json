@@ -11,13 +11,19 @@
     "build": "webpack --config config/webpack.prod.js",
     "webpack": "webpack --config config/webpack.dev.js"
   },
-  "browserslist": [
-    "defaults"
-  ],
   "babel": {
     "presets": [
       "minify",
-      "@babel/preset-env",
+      [
+        "@babel/preset-env",
+        {
+          "targets": "defaults",
+          "bugfixes": true,
+          "corejs": 3,
+          "useBuiltIns": "usage",
+          "shippedProposals": true
+        }
+      ],
       "@babel/preset-react"
     ]
   },
@@ -94,9 +100,9 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-standard": "^4.0.1",
     "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.2.0",
+    "html-webpack-plugin": "^4.2.1",
     "prettier": "^2.0.5",
-    "style-loader": "^1.2.0",
+    "style-loader": "^1.2.1",
     "ts-loader": "^7.0.1",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
@@ -105,6 +111,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "core-js": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
