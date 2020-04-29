@@ -33,7 +33,7 @@ module.exports = webpackMerge(
           include: [paths.src],
           oneOf: [
             {
-              test: /\.js$/,
+              test: /\.(js|jsx)$/,
               use: ['babel-loader', 'eslint-loader'],
             },
             {
@@ -58,7 +58,7 @@ module.exports = webpackMerge(
       new DotenvPlugin({ path: paths.dotEnv }),
     ],
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.jsx'],
       modules: [paths.src, paths.nodeModules],
     },
   }
