@@ -55,6 +55,7 @@
     "ignorePatterns": [
       "build/",
       "output/",
+      "dist/",
       "node_modules/"
     ],
     "rules": {
