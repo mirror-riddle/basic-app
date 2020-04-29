@@ -10,10 +10,13 @@ body {
 }
 
 #root {
+  background-color: #006fbb;
+}
+
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #006fbb;
 }
 
 .basic-app {
@@ -22,6 +25,10 @@ body {
 
 .basic-app-title {
   color: white;
+}
+
+.basic-app-count::before {
+  content: ' ';
 }
 
 @keyframes rotate-circle {
@@ -34,9 +41,28 @@ body {
 }
 
 .basic-app-favicon {
+  position: relative;
+}
+
+.basic-app-favicon img {
   width: 70%;
   animation-name: rotate-circle;
   animation-duration: 2000ms;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+.basic-app-favicon::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  content: attr(data-count);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  pointer-events: none;
 }
