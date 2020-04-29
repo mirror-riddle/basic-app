@@ -68,6 +68,7 @@
       "definitions/",
       "dist/",
       "output/",
+      "dist/",
       "node_modules/"
     ],
     "rules": {
