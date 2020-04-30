@@ -58,7 +58,7 @@ module.exports = webpackMerge(
       new DotenvPlugin({ path: paths.dotEnv }),
     ],
     resolve: {
-      extensions: ['.ts', '.tsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
       modules: [paths.src, paths.nodeModules],
     },
   }
