@@ -2,7 +2,7 @@
 
 Basic app intergrated with webpack, babel and eslint.
 
-## branchs
+## branches
 
 1. `master`
 
