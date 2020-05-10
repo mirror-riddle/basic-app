@@ -16,7 +16,7 @@ Basic app intergrated with webpack, babel and eslint.
 
    eslint extends: `standard`, `prettier`
 
-2) react-app-js
+2. react-app-js
 
    Basic react app in javascript
 
