@@ -23,6 +23,5 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
-  "files": ["./definitions/images.d.ts", "./definitions/styles.d.ts"]
+  "include": ["definitions"],
 }
