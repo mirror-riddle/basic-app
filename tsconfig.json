@@ -23,5 +23,5 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["definitions"],
+  "include": ["definitions", "node_modules"]
 }
