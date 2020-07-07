@@ -5,7 +5,7 @@ const DotenvPlugin = require('dotenv-webpack');
 const webpackMerge = require('webpack-merge');
 const paths = require('./paths');
 
-module.exports = webpackMerge(
+module.exports = webpackMerge.merge(
   {},
   {
     mode: 'none',
